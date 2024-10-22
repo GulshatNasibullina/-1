@@ -13,8 +13,7 @@ class ProductController extends Controller
     $products = Product::all(); 
     return view('products', compact('products'));
     }
-
-
+// Метод получения товара по id
     public function show($id)
     {
         $product = Product::findOrFail($id);
