@@ -27,6 +27,6 @@
                 У вас нет заказов. 
             </div> 
         @endif 
-    </div> 
+    </div>  
 </body> 
 </html>

@@ -20,6 +20,13 @@ class OrderController extends Controller
     $this->middleware('auth');
     }
 
+    public function orders()
+{
+    $orders = auth()->user()->orders; // Предполагается, что у вас есть отношение orders в модели User
+
+    return view('user.orders', compact('orders'));
+}
+
     public function store(Request $request)
     {
         $request->validate([

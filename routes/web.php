@@ -16,3 +16,6 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('register', [RegisterController::class, 'register']);
 Route::get('/my-orders', [OrderController::class, 'index'])->middleware('auth')->name('my-orders');
+Route::get('/admin', [AdminController::class, 'index'])->middleware( 'admin'); 
+Route::post('/admin/order/approve/{id}', [AdminController::class, 'approveOrder'])->name('order.approve');
+Route::post('/admin/order/deliver/{id}', [AdminController::class, 'deliverOrder'])->name('order.deliver');
